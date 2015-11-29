@@ -1,0 +1,34 @@
+<?php
+namespace BDApp\SLBundle\Document;
+use Doctrine\ODM\MongoDB\Mapping\Annotations as MongoDB;
+
+/**
+ * @MongoDB\Document
+ */
+class Request_builder
+{
+    /**
+     * @MongoDB\Id
+     */
+    protected $id;
+
+    /**
+     * @MongoDB\Field(name="key_words", type="collection")
+     */
+    protected $key_words;
+
+    /**
+     * @MongoDB\Field(name="user_opt", type="bool")
+     */
+    protected $user_opt;
+
+    /**
+     * @MongoDB\Field(name="tags_opt", type="bool")
+     */
+    protected $tags_opt;
+
+    /**
+     * @MongoDB\Field(name="content_opt", type="bool")
+     */
+    protected $content_opt;
+}

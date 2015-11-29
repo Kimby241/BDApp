@@ -1,0 +1,7 @@
+bd_app_sl_homepage:
+    path:     /
+    defaults: { _controller: BDAppSLBundle:Default:index }
+
+bd_app_showpage:
+    path:     /show
+    defaults: { _controller: BDAppSLBundle:Default:show }
