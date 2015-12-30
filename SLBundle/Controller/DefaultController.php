@@ -7,9 +7,6 @@ use BDApp\SLBundle\Document\Tweet;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
-//define('CONSUMER_KEY', 'kw7uTjsFrnmkJDQL5ha7oxZLR');
-
-
 class DefaultController extends Controller
 {
 	private $CONSUMER_KEY = 'kw7uTjsFrnmkJDQL5ha7oxZLR';
@@ -17,14 +14,15 @@ class DefaultController extends Controller
 	private $ACCESS_TOKEN = '1665500222-tGoJnmY7Ue2JSQnM3CM6fllaZAtP92lYxOx3SkH';
 	private $ACCESS_TOKEN_SECRET = 'MltZcOoX9IqKQKOVxxNLsxzgEAfETttvLvSz6kY7MdiET';
 
-    public function indexAction()
+	public function indexAction()
     {
     	$query = array(
-		  "q" => "happy birthday",
+		  "q" => "peugeot",
 		);
 		  
 		$results = $this->search($query);
 		$dm = $this->get('doctrine_mongodb')->getManager();
+
 		foreach ($results->statuses as $result)
 		{
 			$tt = new Tweet();
@@ -43,7 +41,7 @@ class DefaultController extends Controller
 		    {
 		     	$hashtags[] = $tag->text;
 		    }
-		    $tt->setHashtags(array());
+		    $tt->setHashtags($hashtags);
 		    $dm->persist($tt);
 		}
 		$dm->flush();

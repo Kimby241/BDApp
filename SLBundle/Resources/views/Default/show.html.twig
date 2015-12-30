@@ -45,6 +45,13 @@
 		           <td>{{ tt.getCoordonates }}</td>
 		           <td>{{ tt.getUserSreenName }}</td>
 		           <td>{{ tt.getUserLocation }}</td>
+		           <td>
+		           		{% for ht in tt.hashtags %}
+		           			<li>{{ ht }}</li>
+		           		{% else %}
+		           		aucun tag
+		           		{% endfor %}
+		           	</td>
 		       </tr>
 			{% else %}
 				<p>Aucune catégorie n'a été trouvée.</p>

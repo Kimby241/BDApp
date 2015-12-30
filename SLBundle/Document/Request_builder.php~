@@ -13,22 +13,17 @@ class Request_builder
     protected $id;
 
     /**
-     * @MongoDB\Field(name="key_words", type="collection")
+     * @MongoDB\Field(name="key_words", type="string")
      */
     protected $key_words;
 
     /**
+     * @MongoDB\Field(name="hashtags", type="string")
+     */
+    protected $hashtags;
+
+    /**
      * @MongoDB\Field(name="user_opt", type="bool")
      */
-    protected $user_opt;
-
-    /**
-     * @MongoDB\Field(name="tags_opt", type="bool")
-     */
-    protected $tags_opt;
-
-    /**
-     * @MongoDB\Field(name="content_opt", type="bool")
-     */
-    protected $content_opt;
+    protected $users;
 }

@@ -13,24 +13,19 @@ class Request_builder
     protected $id;
 
     /**
-     * @MongoDB\Field(name="key_words", type="collection")
+     * @MongoDB\Field(name="key_words", type="string")
      */
     protected $key_words;
 
     /**
+     * @MongoDB\Field(name="hashtags", type="string")
+     */
+    protected $hashtags;
+
+    /**
      * @MongoDB\Field(name="user_opt", type="bool")
      */
-    protected $user_opt;
-
-    /**
-     * @MongoDB\Field(name="tags_opt", type="bool")
-     */
-    protected $tags_opt;
-
-    /**
-     * @MongoDB\Field(name="content_opt", type="bool")
-     */
-    protected $content_opt;
+    protected $users;
 
     /**
      * Get id
@@ -45,7 +40,7 @@ class Request_builder
     /**
      * Set keyWords
      *
-     * @param collection $keyWords
+     * @param string $keyWords
      * @return self
      */
     public function setKeyWords($keyWords)
@@ -57,7 +52,7 @@ class Request_builder
     /**
      * Get keyWords
      *
-     * @return collection $keyWords
+     * @return string $keyWords
      */
     public function getKeyWords()
     {
@@ -65,68 +60,46 @@ class Request_builder
     }
 
     /**
-     * Set userOpt
+     * Set hashtags
      *
-     * @param bool $userOpt
+     * @param string $hashtags
      * @return self
      */
-    public function setUserOpt($userOpt)
+    public function setHashtags($hashtags)
     {
-        $this->user_opt = $userOpt;
+        $this->hashtags = $hashtags;
         return $this;
     }
 
     /**
-     * Get userOpt
+     * Get hashtags
      *
-     * @return bool $userOpt
+     * @return string $hashtags
      */
-    public function getUserOpt()
+    public function getHashtags()
     {
-        return $this->user_opt;
+        return $this->hashtags;
     }
 
     /**
-     * Set tagsOpt
+     * Set users
      *
-     * @param bool $tagsOpt
+     * @param bool $users
      * @return self
      */
-    public function setTagsOpt($tagsOpt)
+    public function setUsers($users)
     {
-        $this->tags_opt = $tagsOpt;
+        $this->users = $users;
         return $this;
     }
 
     /**
-     * Get tagsOpt
+     * Get users
      *
-     * @return bool $tagsOpt
+     * @return bool $users
      */
-    public function getTagsOpt()
+    public function getUsers()
     {
-        return $this->tags_opt;
-    }
-
-    /**
-     * Set contentOpt
-     *
-     * @param bool $contentOpt
-     * @return self
-     */
-    public function setContentOpt($contentOpt)
-    {
-        $this->content_opt = $contentOpt;
-        return $this;
-    }
-
-    /**
-     * Get contentOpt
-     *
-     * @return bool $contentOpt
-     */
-    public function getContentOpt()
-    {
-        return $this->content_opt;
+        return $this->users;
     }
 }

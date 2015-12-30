@@ -5,3 +5,7 @@ bd_app_sl_homepage:
 bd_app_showpage:
     path:     /show
     defaults: { _controller: BDAppSLBundle:Default:show }
+
+#bd_app_req:
+#  pattern: /request_builder/
+#  defaults: { _controller: BDAppSLBundle:Request_builder:req }
